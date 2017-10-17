@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = [
 ]
 
 LOGIN_REQUIRED_URLS = (
-	r'/projects/(.*)$',
+	r'/projects/add/$',
 )
 
 LOGIN_REQUIRED_URLS_EXCEPTIONS = (

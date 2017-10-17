@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+<head>
+	<title>Add Project</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'base/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'projects/add.css' %}">
+</head>
+<body>
+	{% include 'base/navbar.html' %}	
+	<div class="container">
+		<form class="projectForm" action="{% url 'projects:submit'%}" method="post">
+		{% csrf_token %}
+		<input type="text" name="project_name" value="Name"/>
+		<input type="text" name="project_short_desc" value="Desc" />
+		<input type="text" name="project_url" value="Url" />
+		<br/>
+		<input type="submit" value="Submit"/>
+		</form>
+	</div>
+	<script url="{% static 'base/bootstrap.js' %}"></script>
+</body>
+
+</html>
