@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+	<head>
+		<title>Projects</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'base/bootstrap.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'projects/style.css' %}">
+	</head>
+	
+	<body>
+	{% include 'base/navbar.html' %}
+	<div class="container">
+		{% if project_list %}
+		<ul class="project_list">
+		{% for project in project_list %}
+			<li class="project">
+				<a href="{% url 'projects:detail' project.id %}">
+		 	   	<h2>{{ project.project_name }}</h2>
+					<p>{{ project.short_desc }}</p>
+				</a>
+				<a href="{{project.project_url}}">Source</a>
+			</li>
+		{% endfor %}	
+		</ul>
+		{% endif %}
+	</div>
+	</body>
+	<script src="{% static 'base/bootstrap.js'%}"></script>
+</html>

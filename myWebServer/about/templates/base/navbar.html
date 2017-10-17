@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+	<a class="navbar-brand" href="#">CH</a>
+	<div id="navbarBase" class="collapse navbar-collapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item {% if request.path == '/home/'%} active {% endif %}">
+				<a class="nav-link" href="{% url 'home' %}">Home</a>
+			</li>
+			<li class="nav-item {% if request.path == '/about/' %} active {% endif %}">
+				<a class="nav-link" href="{% url 'about:about'%}">About</a>
+			</li>
+			<li class="nav-item {% if request.path == '/projects/' %} active {% endif %}">
+				<a class="nav-link" href="{% url 'projects:projects'%}">Projects</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
